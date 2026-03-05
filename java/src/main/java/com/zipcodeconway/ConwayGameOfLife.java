@@ -2,18 +2,22 @@ package com.zipcodeconway;
 
 
 
+
 public class ConwayGameOfLife {
     private int[][] currentWorld;
     private int dimension;
+    private SimpleWindow window;
 
     public ConwayGameOfLife(Integer dimension) {
         this.dimension = dimension;
         this.currentWorld = createRandomStart(dimension);
+        this.window = new SimpleWindow(dimension);
     }
 
     public ConwayGameOfLife(Integer dimension, int[][] startmatrix) {
         this.dimension = dimension;
         this.currentWorld = startmatrix;
+        this.window = new SimpleWindow(dimension);
     }
 
     public static void main(String[] args) {
@@ -50,7 +54,8 @@ public class ConwayGameOfLife {
                     nextWorld[row][col] = isAlive(row, col, currentWorld);
                 }
             }
-            display(currentWorld, gen);
+            window.display(currentWorld, gen);
+            window.sleep(100);
             copyAndZeroOut(nextWorld, currentWorld);
         }
         return currentWorld;
@@ -120,4 +125,3 @@ public class ConwayGameOfLife {
         System.out.println();
     }
 }
-
