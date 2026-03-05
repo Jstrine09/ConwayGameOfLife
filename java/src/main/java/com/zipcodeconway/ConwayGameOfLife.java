@@ -1,23 +1,34 @@
 package com.zipcodeconway;
 
+
+
 public class ConwayGameOfLife {
 
     public ConwayGameOfLife(Integer dimension) {
-     }
+        
+    }
 
     public ConwayGameOfLife(Integer dimension, int[][] startmatrix) {
+
     }
 
     public static void main(String[] args) {
         ConwayGameOfLife sim = new ConwayGameOfLife(50);
         int[][] endingWorld = sim.simulate(50);
+
+        
     }
+    
+    
 
     // Contains the logic for the starting scenario.
     // Which cells are alive or dead in generation 0.
     // allocates and returns the starting matrix of size 'dimension'
     private int[][] createRandomStart(Integer dimension) {
-        return new int[1][1];
+        if (dimension < 1) {
+            return new int[1][1];
+        }
+        return new int[dimension][dimension];
     }
 
     public int[][] simulate(Integer maxGenerations) {
@@ -41,3 +52,4 @@ public class ConwayGameOfLife {
         return 0;
     }
 }
+

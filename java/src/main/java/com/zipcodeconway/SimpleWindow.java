@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 public class SimpleWindow {
     static JPanel panel;
     static JFrame frame;
-    private Integer dim = 0;
+    private Integer dim = 1;
 
     public SimpleWindow(Integer dimension) {
         this.dim = dimension * 10;
