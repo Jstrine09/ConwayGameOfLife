@@ -44,11 +44,11 @@ public class SimpleWindow {
             for (int j = 0; j < array[0].length; j++) {
                 g.drawRect(i * BOX_DIM, j * BOX_DIM, 10, 10);
                 if (array[i][j] == 0) {
-                    g.setColor(Color.WHITE);
+                    g.setColor(Color.GRAY);
                     g.fillRect(i * BOX_DIM, j * BOX_DIM, 10, 10);
                 }
                 if (array[i][j] == 1) {
-                    g.setColor(Color.RED);
+                    g.setColor(Color.BLACK);
                     g.fillRect(i * BOX_DIM, j * BOX_DIM, 10, 10);
                 }
             }
